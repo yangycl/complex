@@ -1,3 +1,6 @@
+function degToRad(deg:number):number{
+    return deg * Math.PI /180;
+}
 class Complex{
     real:number;
     imag:number;
@@ -96,3 +99,41 @@ var test3 = Complex.divide([test,test2]);
 console.log(test3.toString());
 var test4 = new Complex("3+4i");
 console.log(test4.abs())
+
+class Polar{
+    r:number;
+    theta:number;
+    constructor(r:number, theta:number){
+        this.r = r;
+        this.theta = theta % 360;
+    }
+    addTheta(add:number):void{
+        this.theta += add; 
+    }
+    subtractTheta(subtract:number):void{
+        this.theta -= subtract; 
+    }
+    addR(add:number):void{
+        this.r += add;
+    }
+    subtractR(subtract:number):void{
+        this.r -= subtract;
+    }
+    toComplex():Complex{
+        let r = this.r;
+        let theta = this.theta;
+        let rad = degToRad(theta);
+        let real:number = r * Math.cos(rad);
+        let imag:number = r * Math.sin(rad);
+        let sing:"+"|'-' = imag >= 0 ? "+" : "-";
+        imag = Math.abs(imag);
+        return new Complex(`${real}${sing}${imag}i`)
+
+    }
+}
+console.log("test!");
+let p = new Polar(2, 45);
+console.log(p.toComplex().toString());  // 應該是 "1.414+1.414i"
+
+let p2 = new Polar(2, 135);  // 第二象限
+console.log(p2.toComplex().toString());  // 應該是 "-1.414+1.414i"

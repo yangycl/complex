@@ -13,3 +13,13 @@ declare class Complex {
     toString(): string;
     abs():number;
 }
+declare class Polar{
+    r:number;
+    theta:number;
+    constructor(r:number, theta:number);
+    addTheta(add:number):void;  
+    subtractTheta(subtract:number):void;
+    addR(add:number):void;
+    subtractR(subtract:number):void;
+    toComplex(polar:Polar):Complex;     
+}

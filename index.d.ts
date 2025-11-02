@@ -11,4 +11,5 @@ declare class Complex {
     static divide(comarr: Complex[]): Complex;
 
     toString(): string;
+    abs():number;
 }

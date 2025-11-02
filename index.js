@@ -91,6 +91,9 @@ class Complex {
         }
         return `${real}${!real || !imag ? '' : sign}${imag}${imag !== "" ? "i" : ""}`;
     }
+    abs() {
+        return Math.sqrt(this.real ** 2 + this.imag ** 2);
+    }
 } //todo:
 console.log("test!!");
 var test = new Complex("3-2i");
@@ -98,3 +101,5 @@ console.log(test.toString());
 var test2 = new Complex("2+8i");
 var test3 = Complex.divide([test, test2]);
 console.log(test3.toString());
+var test4 = new Complex("3+4i");
+console.log(test4.abs());

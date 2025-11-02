@@ -20,7 +20,7 @@ class Complex {
             let imag = Number(comStr.slice(index).replace("i", ""));
             let real = Number(comStr.slice(0, index));
             this.real = real;
-            this.imag = Math.abs(imag);
+            this.imag = imag;
         }
         switch (comStr.charAt(index)) {
             case "+":
@@ -85,6 +85,10 @@ class Complex {
         let real = this.real || "";
         let imag = this.imag || "";
         let sign = this.sign;
+        switch (imag) {
+            case "": break;
+            default: imag = Math.abs(imag);
+        }
         return `${real}${!real || !imag ? '' : sign}${imag}${imag !== "" ? "i" : ""}`;
     }
 } //todo:

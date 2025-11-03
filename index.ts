@@ -1,6 +1,9 @@
 function degToRad(deg:number):number{
     return deg * Math.PI /180;
 }
+function radToDeg(rad:number):number{
+    return rad * 180 / Math.PI;
+}
 class Complex{
     real:number;
     imag:number;
@@ -89,6 +92,12 @@ class Complex{
     }
     abs():number{
         return Math.sqrt(this.real**2+this.imag**2);
+    }
+    toPolar():Polar{
+        let r = this.abs();
+        let rad = Math.atan2(this.imag,this.real);
+        let theta = radToDeg(rad);
+        return new Polar(r,theta)
     }
 }//todo:
 console.log("test!!");

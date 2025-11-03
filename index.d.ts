@@ -1,3 +1,5 @@
+declare function degToRad(deg:number):number;
+declare function radToDeg(rad:number):number
 declare class Complex {
     real: number;
     imag: number;
@@ -12,6 +14,7 @@ declare class Complex {
 
     toString(): string;
     abs():number;
+    toPolar():Polar;
 }
 declare class Polar{
     r:number;

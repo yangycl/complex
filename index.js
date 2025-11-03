@@ -2,6 +2,9 @@
 function degToRad(deg) {
     return deg * Math.PI / 180;
 }
+function radToDeg(rad) {
+    return rad * 180 / Math.PI;
+}
 class Complex {
     constructor(comStr) {
         let index = Math.max(comStr.lastIndexOf("+"), comStr.lastIndexOf("-"));
@@ -96,6 +99,12 @@ class Complex {
     }
     abs() {
         return Math.sqrt(this.real ** 2 + this.imag ** 2);
+    }
+    toPolar() {
+        let r = this.abs();
+        let rad = Math.atan2(this.imag, this.real);
+        let theta = radToDeg(rad);
+        return new Polar(r, theta);
     }
 } //todo:
 console.log("test!!");

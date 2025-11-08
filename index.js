@@ -106,6 +106,10 @@ class Complex {
         let theta = radToDeg(rad);
         return new Polar(r, theta);
     }
+    scale(factor) {
+        this.real * factor;
+        this.imag * factor;
+    }
 } //todo:
 console.log("test!!");
 var test = new Complex("3-2i");

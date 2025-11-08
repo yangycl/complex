@@ -15,6 +15,7 @@ declare class Complex {
     toString(): string;
     abs():number;
     toPolar():Polar;
+    scale(factor:number):void;
 }
 declare class Polar{
     r:number;

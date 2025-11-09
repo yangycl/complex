@@ -107,8 +107,14 @@ class Complex {
         return new Polar(r, theta);
     }
     scale(factor) {
-        this.real * factor;
-        this.imag * factor;
+        this.real *= factor;
+        this.imag *= factor;
+    }
+    rotate(theta) {
+        let polar = this.toPolar();
+        polar.theta += theta;
+        let newComplex = polar.toComplex();
+        return newComplex;
     }
 } //todo:
 console.log("test!!");

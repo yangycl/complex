@@ -16,6 +16,7 @@ declare class Complex {
     abs():number;
     toPolar():Polar;
     scale(factor:number):void;
+    rotate(theta:number):Complex;
 }
 declare class Polar{
     r:number;

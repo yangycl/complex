@@ -103,6 +103,12 @@ class Complex{
         this.real *= factor;
         this.imag *= factor;
     }
+    rotate(theta:number):Complex{
+        let polar:Polar = this.toPolar();
+        polar.theta += theta;
+        let newComplex:Complex = polar.toComplex();
+        return newComplex;
+    }
 }//todo:
 console.log("test!!");
 var test = new Complex("3-2i");

@@ -116,6 +116,18 @@ class Complex {
         let newComplex = polar.toComplex();
         return newComplex;
     }
+    static rect(z, height, width, ctx) {
+        const canvasX = ctx.canvas.width / 2 + z.real;
+        const canvasY = ctx.canvas.height / 2 - z.imag;
+        ctx.beginPath();
+        ctx.rect(canvasX, canvasY, width, height);
+        ctx.stroke();
+    }
+    static arc(z, r, ctx) {
+        const canvasX = ctx.canvas.width / 2 + z.real;
+        const canvasY = ctx.canvas.height / 2 - z.imag;
+        ctx.arc(canvasX, canvasY, r, 0, Math.PI * 2);
+    }
 } //todo:
 console.log("test!!");
 var test = new Complex("3-2i");

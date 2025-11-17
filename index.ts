@@ -109,6 +109,28 @@ class Complex{
         let newComplex:Complex = polar.toComplex();
         return newComplex;
     }
+    static rect(
+        z: Complex,
+        height: number,
+        width: number,
+        ctx: CanvasRenderingContext2D
+    ): void {
+        const canvasX = ctx.canvas.width / 2 + z.real;
+        const canvasY = ctx.canvas.height / 2 - z.imag;
+
+        ctx.beginPath();
+        ctx.rect(canvasX, canvasY, width, height);
+        ctx.stroke();
+    }
+    static arc (
+        z:Complex,
+        r:number,
+        ctx:CanvasRenderingContext2D
+    ):void{
+        const canvasX = ctx.canvas.width / 2 + z.real;
+        const canvasY = ctx.canvas.height / 2 - z.imag;        
+        ctx.arc(canvasX,canvasY,r,0,Math.PI*2);
+    }
 }//todo:
 console.log("test!!");
 var test = new Complex("3-2i");

@@ -17,6 +17,17 @@ declare class Complex {
     toPolar():Polar;
     scale(factor:number):void;
     rotate(theta:number):Complex;
+    static rect(
+        z: Complex,
+        height: number,
+        width: number,
+        ctx: CanvasRenderingContext2D
+    ): void ;
+    static arc (
+        z:Complex,
+        r:number,
+        ctx:CanvasRenderingContext2D
+    ):void;
 }
 declare class Polar{
     r:number;

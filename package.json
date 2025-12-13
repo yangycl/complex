@@ -1,0 +1,21 @@
+{
+  "name": "yacomplex",
+  "version": "1.0.0",
+  "description": "A small Complex/Polar helper library",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "files": [
+    "index.js",
+    "index.d.ts"
+  ],
+  "keywords": ["complex","polar","math"],
+  "author": "yangycl <your-email@example.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yangycl/yacomplex.git"
+  },
+  "engines": {
+    "node": ">=14"
+  }
+}

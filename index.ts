@@ -118,7 +118,6 @@ class Complex{
         const canvasX = ctx.canvas.width / 2 + z.real;
         const canvasY = ctx.canvas.height / 2 - z.imag;
 
-        ctx.beginPath();
         ctx.rect(canvasX, canvasY, width, height);
         ctx.stroke();
     }

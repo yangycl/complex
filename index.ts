@@ -4,7 +4,7 @@ function degToRad(deg:number):number{
 function radToDeg(rad:number):number{
     return rad * 180 / Math.PI;
 }
-class Complex{
+export class Complex{
     real:number;
     imag:number;
     sign:"+"|'-'|"";
@@ -140,7 +140,7 @@ console.log(test3.toString());
 var test4 = new Complex("3+4i");
 console.log(test4.abs())
 
-class Polar{
+export class Polar{
     r:number;
     theta:number;
     constructor(r:number, theta:number){

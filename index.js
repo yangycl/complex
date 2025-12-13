@@ -1,11 +1,13 @@
-"use strict";
 function degToRad(deg) {
     return deg * Math.PI / 180;
 }
 function radToDeg(rad) {
     return rad * 180 / Math.PI;
 }
-class Complex {
+export class Complex {
+    real;
+    imag;
+    sign;
     constructor(comStr) {
         let index = Math.max(comStr.lastIndexOf("+"), comStr.lastIndexOf("-"));
         if (index === -1) {
@@ -136,7 +138,9 @@ var test3 = Complex.divide([test, test2]);
 console.log(test3.toString());
 var test4 = new Complex("3+4i");
 console.log(test4.abs());
-class Polar {
+export class Polar {
+    r;
+    theta;
     constructor(r, theta) {
         this.r = r;
         this.theta = theta % 360;
